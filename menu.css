@@ -1,0 +1,178 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    padding-top: 70px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #ff7e5f; /* Unified solid orange color */
+    color: #fff; /* White text for contrast */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    height: 70px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0077cc; /* Blue for branding */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Menu chính */
+.menu {
+    background-color: rgba(255, 126, 95, 0.9); /* Semi-transparent orange */
+    color: #fff; /* White text for better contrast */
+    padding: 10px 20px;
+    border-radius: 10px; /* Rounded corners */
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Reduced gap between menu items */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu a {
+    color: #fff; /* White text for links */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space for icons */
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background: rgba(255, 126, 95, 1); /* Solid orange on hover */
+    color: #fff; /* White text on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu li {
+    position: relative;
+    margin: 0 5px; /* Reduced horizontal margin for extra compactness */
+}
+
+/* Submenu */
+.submenu .dropdown {
+    display: none;
+    position: absolute;
+    background: rgba(255, 126, 95, 0.9); /* Semi-transparent orange for dropdown */
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1000;
+    color: #fff; /* White text for dropdown links */
+}
+
+.submenu:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown a {
+    padding: 10px 20px;
+    width: 100%;
+    display: block;
+    color: #fff; /* White text for dropdown links */
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.dropdown a:hover {
+    background: rgba(255, 126, 95, 1); /* Solid orange on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Menu mobile */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff; /* White toggle icon */
+    z-index: 3000;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+        width: 250px;
+        border-radius: 10px;
+        text-align: left;
+        padding: 20px;
+        z-index: 2000;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Icon styles */
+.menu a i {
+    font-size: 18px; /* Icon size */
+    color: #0077cc; /* Match link color */
+    transition: color 0.3s ease;
+}
+
+.menu a:hover i {
+    color: #fff; /* White icon on hover */
+}
+
+/* Hiệu ứng khi cuộn */
+header.scroll {
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
