@@ -545,100 +545,6 @@ Object.keys(galleries).forEach(id => {
     </head>
 
 
-    <footer class="site-footer">
-        <div class="footer-container">
-            <!-- Thông tin liên hệ -->
-            <div class="contact-info">
-                <p><strong>Liên hệ chúng tôi:</strong></p>
-                <p>Email: <a href="mailto:mkcons.az@gmail.com" style="color:#f1c40f;">mkcons.az@gmail.com</a></p>
-                <p>Số điện thoại: 0867544809 & 0825864379</p>
-                <p>Địa chỉ công ty: Ninh Bình, Ninh Hòa, Khánh Hòa, Việt Nam</p>
-                <p><strong>Vị trí của bạn:</strong> <span id="user-location">Đang xác định...</span></p>
-            </div>
-    
-            <!-- Bản quyền -->
-            <div class="footer-content">
-                <p>&copy; 2025 Xây Dựng Minh Khoa. All rights reserved.</p>
-            </div>
-    
-            <!-- Mạng xã hội -->
-            <div class="social-icons">
-                <p><strong>Kết nối với chúng tôi:</strong></p>
-                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube fa-2x"></i></a>
-                <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="fab fa-tiktok fa-2x"></i></a>
-            </div>
-        </div>
-            <!-- Thiết kế bởi -->
-    <div class="footer-bottom">
-        <p>© Designed & Developed by <a href="Dev.html" target="_blank">DevServerPyML</a></p>
-    </div>
-
-    </footer>
-    
-    <!-- JavaScript lấy vị trí người dùng -->
-    <script>
-        fetch("https://ipinfo.io/json?token=ffafdfeb7f37bf")
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("user-location").innerText = 
-                    `${data.city}, ${data.region}, ${data.country}`;
-            })
-            .catch(() => {
-                document.getElementById("user-location").innerText = "Không thể lấy vị trí.";
-            });
-    </script>
-    
-
-
-<style>
-.footer-container .contact-info {
-    color: white !important;  /* Toàn bộ chữ màu trắng */
-    text-align: center;  /* Căn giữa nội dung */
-    font-size: 15px;  /* Cỡ chữ 15px */
-    background: none !important;  /* Loại bỏ nền trắng */
-    padding: 0;  /* Xóa khoảng cách bên trong */
-    border-radius: 0;  /* Loại bỏ bo góc */
-    box-shadow: none;  /* Xóa hiệu ứng bóng */
-}
-
-.footer-container .contact-info p {
-    color: white !important;  /* Đảm bảo tất cả đoạn văn bản màu trắng */
-    margin: 5px 0;  /* Giảm khoảng cách giữa các dòng */
-}
-
-.footer-container .contact-info a {
-    color: white !important;  /* Đảm bảo link email cũng màu trắng */
-    font-weight: normal;  /* Nếu cần thì bỏ in đậm */
-    text-decoration: none;  /* Xóa gạch chân */
-}
-
-
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-.social-icons a i {
-    font-size: 28px;
-    transition: transform 0.3s ease-in-out, color 0.3s;
-}
-.social-icons a:hover i {
-    transform: scale(1.2);
-    color: #f1c40f;
-}
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-}
-
-    </style>
-
         <script src="tuvan.js"></script>
 
     <style>
@@ -677,6 +583,7 @@ Object.keys(galleries).forEach(id => {
         #floating-contact a img {
           width: 40px; /* Phóng to ảnh biểu tượng */
           height: 40px;
+          margin: auto; /* Center the icon */
         }
       
         /* Hiệu ứng nhúng */
@@ -756,6 +663,85 @@ Object.keys(galleries).forEach(id => {
 
 
       </style>
+      
+      <style>
+  /* Floating contact container */
+  #floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Contact buttons */
+  #floating-contact a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0078ff, #00c6ff); /* Gradient background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-decoration: none;
+  }
+
+  /* Hover effect */
+  #floating-contact a:hover {
+    transform: scale(1.15); /* Slight zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow */
+    background: linear-gradient(135deg, #0056b3, #0099cc); /* Darker gradient */
+  }
+
+  /* Icons inside buttons */
+  #floating-contact a img {
+    width: 35px;
+    height: 35px;
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.6)); /* Glow effect */
+    margin: auto; /* Center the icon */
+  }
+
+  /* Bounce animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px); /* Bounce up */
+    }
+  }
+
+  /* Apply bounce animation */
+  #floating-contact a {
+    animation: bounce 1.5s infinite;
+  }
+
+  /* Tooltip for buttons */
+  #floating-contact a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 80px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  #floating-contact a:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
       
       <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -846,8 +832,8 @@ Object.keys(galleries).forEach(id => {
       
           // Tạo nút liên hệ qua Facebook
           const facebookButton = document.createElement("a");
-          facebookButton.href = "https://www.facebook.com/mkdesign79/"; // Đường dẫn tới trang Facebook của bạn
-          facebookButton.target = "_blank"; // Mở trong cửa sổ mới
+          facebookButton.href = "https://www.facebook.com/xaydungkhanhhoa7979/"; // Updated Facebook page link
+          facebookButton.target = "_blank"; // Open in a new window
           facebookButton.title = "Liên hệ qua Facebook";
           facebookButton.style.display = "flex";
           facebookButton.style.alignItems = "center";
@@ -909,9 +895,152 @@ Object.keys(galleries).forEach(id => {
         });
       </script>
 
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Contact Information Section -->
+    <div class="footer-section contact-info">
+      <h3>Liên hệ chúng tôi</h3>
+      <ul>
+        <li>Email: <a href="mailto:mkcons.az@gmail.com">mkcons.az@gmail.com</a></li>
+        <li>Hotline: <a href="tel:0867544809">0867544809</a> | <a href="tel:0825864379">0825864379</a></li>
+        <li>Địa chỉ: Ninh Bình, Ninh Hòa, Khánh Hòa, Việt Nam</li>
+      </ul>
+    </div>
 
-    
+    <!-- Social Media Section -->
+    <div class="footer-section social-links">
+      <h3>Kết nối với chúng tôi</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/xaydungkhanhhoa7979/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
 
+    <!-- Facebook Embed Section -->
+    <div class="footer-section facebook-embed">
+      <h3>Fanpage Facebook</h3>
+      <div class="fb-page" 
+           data-href="https://www.facebook.com/xaydungkhanhhoa7979/" 
+           data-tabs="timeline" 
+           data-width="340" 
+           data-height="200" 
+           data-small-header="false" 
+           data-adapt-container-width="true" 
+           data-hide-cover="false" 
+           data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/xaydungkhanhhoa7979/" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/xaydungkhanhhoa7979/">Xây Dựng Khánh Hòa</a>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom Section -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Xây Dựng Minh Khoa. All rights reserved. | Designed by <a href="Dev.html" target="_blank">DevServerPyML</a></p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: #2c3e50; /* Dark background for professionalism */
+    color: #ffffff; /* White text color */
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+    border: none; /* Remove any border */
+    background: none; /* Remove background color */
+    box-shadow: none; /* Remove any shadow */
+    padding: 0; /* Remove padding */
+  }
+
+  .footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #FFD700; /* Gold color for headings */
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .footer-section a {
+    color: #ffffff; /* White link color */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-section a:hover {
+    color: #FFD700; /* Gold color for hover */
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+    color: #ffffff; /* White icon color */
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #FFD700; /* Gold color for hover */
+  }
+
+  .facebook-embed {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ffffff; /* White text color */
+  }
+
+  .footer-bottom a {
+    color: #FFD700; /* Gold color for links */
+    text-decoration: none;
+  }
+
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" 
+        nonce="FbSDK"></script>
 
 </body>
 </html>
