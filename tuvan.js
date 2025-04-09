@@ -32,7 +32,6 @@ async function sendForm() {
 
         progressBar.value = 30;
 
-        // Gửi file nếu có
         const fileInput = document.getElementById("product");
         if (fileInput.files.length > 0) {
             let totalFiles = fileInput.files.length;
