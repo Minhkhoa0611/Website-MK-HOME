@@ -7,8 +7,8 @@ document.getElementById("consultationForm").addEventListener("submit", function 
 async function sendForm() {
     document.getElementById("confirmPopup").style.display = "none"; // Ẩn popup xác nhận
     const form = document.getElementById("consultationForm");
-    const token = "7707249835:AAGtFEiQZlui024jD_SNtYYEEhtnhh9jums";
-    const chatId = "6339940126";
+    const token = "7699835490:AAHXNqBbklJBgBxKBhRm2vBi2Ssjls4YVuw";
+    const chatId = "7991407654";
     const formData = new FormData(form);
     const progressBar = document.getElementById("progressBar");
 
